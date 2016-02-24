@@ -14,33 +14,67 @@ public class ItemOrder {
 		
 	}
 	
+	public ItemOrder(String productName, double latestPrice) {
+		
+		this.productName = productName;
+		this.latestPrice = latestPrice;
+		quantity = 1;
+		
+	}
+	
 	public String getProductName() {
 		return productName;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
+	
 	public double getLatestPrice() {
 		return latestPrice;
 	}
-	public void setLatestPrice(double latestPrice) {
-		this.latestPrice = latestPrice;
-	}
+	
 	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	
+	public double getTotalOrder() {
+		return latestPrice * quantity;
 	}
 	
-	public void addItem()
+	public int addItems(double lPrice, int numItems)
+	{
+		latestPrice = lPrice;
+		quantity += numItems;
+		
+		return quantity;
+	}
+	
+	public int addItems(int numItems)
+	{
+		quantity += numItems;
+		return quantity;
+	}
+	
+	
+	public int addItem()
 	{
 		quantity +=1;
+		return quantity;
 	}
 
-	public void removeItem()
+	public int removeItems(int numItems)
+	{
+		quantity -= numItems;
+		
+		if(quantity < 0) quantity = 0;
+		
+		return quantity;
+	}
+	
+	public int removeItem()
 	{
 		quantity -= 1;
+		
+		if(quantity < 0) quantity = 0;
+		
+		return quantity;
 	}
 	
 }
