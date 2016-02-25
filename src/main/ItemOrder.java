@@ -52,6 +52,13 @@ public class ItemOrder {
 		return quantity;
 	}
 	
+	public void editItem(int quantity, double latestPrice)
+	{
+	
+		this.quantity = quantity;
+		this.latestPrice = latestPrice;
+		
+	}
 	
 	public int addItem()
 	{
@@ -75,6 +82,12 @@ public class ItemOrder {
 		if(quantity < 0) quantity = 0;
 		
 		return quantity;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return productName + "\t\t" + latestPrice + "\t\t" + quantity + "\n";
 	}
 	
 }
