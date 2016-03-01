@@ -24,7 +24,7 @@ public class Program {
 	
 	public static void main(String[] args) {
 		
-		JFrame frame = new JFrame();
+		final JFrame frame = new JFrame();
 		frame.setTitle("Shopping Basket");
 		frame.setSize(1000, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,11 +36,11 @@ public class Program {
 		top.setLayout(new GridLayout(1,7));
 		
 		JLabel productNameLabel = new JLabel("Product Name");
-		JTextField productNameInput = new JTextField();
+		final JTextField productNameInput = new JTextField();
 		JLabel quantityLabel = new JLabel("Quantity");
-		JSpinner quantityInput = new JSpinner();
+		final JSpinner quantityInput = new JSpinner();
 		JLabel priceLabel = new JLabel("Latest Price");
-		JTextField priceInput = new JTextField();
+		final JTextField priceInput = new JTextField();
 		JButton addBut = new JButton("Add");
 		
 		top.add(productNameLabel);
@@ -175,7 +175,7 @@ public class Program {
 	
 	public static void removeButton()
 	{
-		JFrame remove = new JFrame();
+		final JFrame remove = new JFrame();
 		remove.setTitle("Remove");
 		remove.setSize(300,300);
 		
@@ -186,9 +186,9 @@ public class Program {
 		content.setLayout(new GridLayout(3,2));
 		
 		JLabel nameLabel = new JLabel("Product Name");
-		JTextField nameInput = new JTextField();
+		final JTextField nameInput = new JTextField();
 		JLabel quantLabel = new JLabel ("Quantity");
-		JSpinner quantInput = new JSpinner();
+		final JSpinner quantInput = new JSpinner();
 		JButton submit = new JButton("Ok");
 		JButton cancel = new JButton("Cancel");
 		
@@ -238,7 +238,7 @@ public class Program {
 	
 	public static void editButton()
 	{
-		JFrame edit = new JFrame();
+		final JFrame edit = new JFrame();
 		edit.setTitle("Edit");
 		edit.setSize(300,300);
 		
@@ -249,11 +249,11 @@ public class Program {
 		content.setLayout(new GridLayout(4,2));
 		
 		JLabel nameLabel = new JLabel("Product Name");
-		JTextField nameInput = new JTextField();
+		final JTextField nameInput = new JTextField();
 		JLabel priceLabel = new JLabel("Price");
-		JTextField priceInput = new JTextField();
+		final JTextField priceInput = new JTextField();
 		JLabel quantLabel = new JLabel ("Quantity");
-		JSpinner quantInput = new JSpinner();
+		final JSpinner quantInput = new JSpinner();
 		JButton submit = new JButton("Ok");
 		JButton cancel = new JButton("Cancel");
 		

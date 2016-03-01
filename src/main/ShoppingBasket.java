@@ -35,8 +35,8 @@ public class ShoppingBasket {
 
 	public void addProduct(String name, double productValue)
 	{
-		int i = findItemByName(name);
-		items.get(i).addItems(productValue, 1);
+		
+		items.add(new ItemOrder(name,productValue));
 		
 		
 	}
