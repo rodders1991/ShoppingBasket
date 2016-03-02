@@ -38,6 +38,12 @@ public class ItemOrder {
 		return latestPrice * quantity;
 	}
 	
+	/**
+	 * Adds quantity to the item whilst updating the latest Price
+	 * @param lPrice new updated price
+	 * @param numItems number of items to add
+	 * @return updated quantity
+	 */
 	public int addItems(double lPrice, int numItems)
 	{
 		latestPrice = lPrice;
@@ -46,12 +52,22 @@ public class ItemOrder {
 		return quantity;
 	}
 	
+	/**
+	 * Adds an addition quantity to the item
+	 * @param numItems number of items to add
+	 * @return updated quantity
+	 */
 	public int addItems(int numItems)
 	{
 		quantity += numItems;
 		return quantity;
 	}
 	
+	/**
+	 * Edits the item by directly changing the quantity and the latest price with new values
+	 * @param quantity new quantity
+	 * @param latestPrice new latest price
+	 */
 	public void editItem(int quantity, double latestPrice)
 	{
 	
@@ -60,12 +76,21 @@ public class ItemOrder {
 		
 	}
 	
+	/**
+	 * Adds one to the quantity
+	 * @return the new quantity
+	 */
 	public int addItem()
 	{
 		quantity +=1;
 		return quantity;
 	}
 
+	/**
+	 * Removes a number from the quantity based on a parameter
+	 * @param numItems number to remove
+	 * @return the new quantity
+	 */
 	public int removeItems(int numItems)
 	{
 		quantity -= numItems;
@@ -75,6 +100,10 @@ public class ItemOrder {
 		return quantity;
 	}
 	
+	/**
+	 * Removes one from quantity
+	 * @return the new quantity
+	 */
 	public int removeItem()
 	{
 		quantity -= 1;
@@ -83,6 +112,7 @@ public class ItemOrder {
 		
 		return quantity;
 	}
+	
 	
 	@Override
 	public String toString()

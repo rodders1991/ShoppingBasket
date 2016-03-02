@@ -13,6 +13,7 @@ public class ShoppingBasket {
 	 * TODO: Cannot use ItemOrder item, need to find a method to search for the item by the product name...
 	 */
 	
+	
 	private ArrayList<ItemOrder> items;
 	
 	public ShoppingBasket()
@@ -20,6 +21,12 @@ public class ShoppingBasket {
 		items = new ArrayList<ItemOrder>();
 	}
 	
+	/**
+	 * Adds a product to the array list 'items'
+	 * @param name the name of the product
+	 * @param productValue the product value of the product 
+	 * @param quant the quantity of the product
+	 */
 	public void addProduct(String name, double productValue, int quant)
 	{
 		items.add(new ItemOrder(name,productValue,quant));
@@ -27,12 +34,15 @@ public class ShoppingBasket {
 	}
 	
 	
-	
-	
 	public ArrayList<ItemOrder> getItems() {
 		return items;
 	}
 
+	/**
+	 * Adds a product to the area list 'items' based on just the name and product value
+	 * @param name the name of the product
+	 * @param productValue the product value of the product
+	 */
 	public void addProduct(String name, double productValue)
 	{
 		
@@ -41,6 +51,12 @@ public class ShoppingBasket {
 		
 	}
 	
+	/**
+	 * Edits an existing item, changing its latest price and quantity
+	 * @param name the name of the existing product
+	 * @param latestPrice the new latest price
+	 * @param quantity the new quantity
+	 */
 	public void editItem (String name, double latestPrice, int quantity)
 	{
 		int i = findItemByName(name);
@@ -51,11 +67,18 @@ public class ShoppingBasket {
 			
 		}
 		else
+		
 		{
 			items.get(i).editItem(quantity, latestPrice);
 		}
 		
 	}
+	
+	/**
+	 * Removes a quantity from an existing product 
+	 * @param name the name of the existing product
+	 * @param quantity the quantity to remove
+	 */
 	public void removeProduct(String name, int quantity)
 	{
 		int i = findItemByName(name);
@@ -71,6 +94,10 @@ public class ShoppingBasket {
 		}
 	}
 	
+	/**
+	 * Remove one quantity from an existing product
+	 * @param name the name of a existing product
+	 */
 	public void removeProduct(String name)
 	{
 		int i = findItemByName(name);
@@ -79,12 +106,18 @@ public class ShoppingBasket {
 		
 	}
 	
+	/**
+	 * Clears the array list items which clears the basket.
+	 */
 	public void clearBasket()
 	{
 		items.clear();
 	}
 	
-	//TODO:
+	/**
+	 * Displays a full list of the items within the basket that has been made easily readable
+	 * @return full list of items
+	 */
 	public String orderItems()
 	{
 		String result = "";
@@ -97,11 +130,19 @@ public class ShoppingBasket {
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @return the number of products
+	 */
 	public int numberOfProducts()
 	{
 		return items.size();
 	}
 	
+	/**
+	 * 
+	 * @return the total cost of the basket
+	 */
 	public double basketTotal()
 	{
 		double result = 0;
@@ -114,6 +155,10 @@ public class ShoppingBasket {
 		return result;
 	}
 	
+	/**
+	 * 
+	 * @return returns the total number of items (combines all the quantities)
+	 */
 	public int numberOfItems()
 	{
 		int result = 0;
@@ -127,6 +172,11 @@ public class ShoppingBasket {
 	}
 	
 	//TODO: Create Exception
+	/**
+	 * Display the current price of an existing product (throws an exception if the product is not found)
+	 * @param name
+	 * @return the latest Price of a product
+	 */
 	public double currentPrice(String name)
 	{
 		int index = findItemByName(name);
@@ -143,6 +193,11 @@ public class ShoppingBasket {
 		
 	}
 	
+	/**
+	 * Checks whether a product is within the basket
+	 * @param name of existing product
+	 * @return true or false based on if product exists 
+	 */
 	public boolean isProductInTheBasket(String name)
 	{
 		int index = findItemByName(name);
@@ -151,7 +206,12 @@ public class ShoppingBasket {
 		else return true;
 	}
 	
-	public boolean saveBasket(String fileName) throws IOException
+	/**
+	 * Saves the basket too a file
+	 * @param fileName the name of the output file
+	 * @return a boolean based on whether the write has succeeded
+	 */
+	public boolean saveBasket(String fileName)
 	{
 		
 		try{
@@ -174,6 +234,11 @@ public class ShoppingBasket {
 		
 	}
 	
+	/**
+	 * Finds an item based on its name
+	 * @param name the name of the existing item
+	 * @return the index of the item or -1 if it cannot be found
+	 */
 	public int findItemByName(String name)
 	{
 		int index = -1;
@@ -189,11 +254,6 @@ public class ShoppingBasket {
 		
 		return index;
 	}
-	
-	
-	
-	
-	
 	
 	
 }

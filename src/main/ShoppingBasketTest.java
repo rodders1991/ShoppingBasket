@@ -43,6 +43,39 @@ public class ShoppingBasketTest {
 		
 	}
 	
+	//TODO: Add to test plan
+	@Test
+	public void testRemoveProduct()
+	{
+		ShoppingBasket sb =  new ShoppingBasket();
+		
+		sb.addProduct("Apple", 7.50);
+		sb.addProduct("Orange", 8);
+		
+		sb.removeProduct("Apple");
+		
+		int i = sb.getItems().size();
+		
+		assertEquals("The size of items should equal too 1",i,1);
+		
+	}
+	
+	//TODO:Add to test plan
+	@Test
+	public void testRemoveProductQuantity()
+	{
+		ShoppingBasket sb =  new ShoppingBasket();
+		
+		sb.addProduct("Apple", 7.50,5);
+		
+		sb.removeProduct("Apple", 3);
+		
+		int i = sb.getItems().get(0).getQuantity();
+		
+		assertEquals("The size of the quantity should equal too 3",i,3);
+		
+	}
+	
 	
 
 }
