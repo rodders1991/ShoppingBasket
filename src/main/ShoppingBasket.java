@@ -224,6 +224,7 @@ public class ShoppingBasket {
 			bw.write(item.getProductName() + "\t\t" + item.getLatestPrice() + "\t\t" + item.getQuantity() + "\n");
 		
 		
+		bw.close();
 		return true;
 		
 		}

@@ -81,14 +81,16 @@ public class Program {
 		bottom.add(exit);
 		
 		JPanel right = new JPanel();
-		right.setLayout(new GridLayout(3,1));
+		right.setLayout(new GridLayout(4,1));
 		
 		JButton remove = new JButton("Remove");
 		JButton edit = new JButton("Edit");
+		JButton save = new JButton("Save Basket");
 		JButton clearBasket = new JButton("Clear Basket");
 		
 		right.add(remove);
 		right.add(edit);
+		right.add(save);
 		right.add(clearBasket);
 		
 		
@@ -118,6 +120,12 @@ public class Program {
 				{
 					editButton();
 				}
+				else if(s == "Save Basket")
+				{
+					basket.saveBasket("basket.txt");
+					
+				
+				}
 				else if(s == "Clear Basket")
 				{
 					basket.clearBasket();
@@ -137,6 +145,7 @@ public class Program {
 		addBut.addActionListener(listener);
 		remove.addActionListener(listener);
 		edit.addActionListener(listener);
+		save.addActionListener(listener);
 		clearBasket.addActionListener(listener);
 		exit.addActionListener(listener);
 		
